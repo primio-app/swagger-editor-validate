@@ -86,6 +86,13 @@ const parseErrors = async (page) => {
     await page.waitForSelector('.swagger-ui div:nth-child(2)', {
       visible: true,
     });
+    // Add and remove some input to trigger the validation
+    await page.focus('.ace_text-input');
+    await page.keyboard.type('x');
+    await page.keyboard.press('Backspace');
+    await new Promise((resolve) => {
+      setTimeout(resolve, 5000);
+    });
 
     const errors = (await parseErrors(page)).filter(
       (error) => !shouldIgnoreError(error)
