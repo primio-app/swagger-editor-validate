@@ -1,5 +1,5 @@
 # action.yml
-name: Swagger Editor Validator
+name: Swagger Editor Validator - Primio
 description: This GitHub Actions validates OpenAPI (OAS) definition file using Swagger Editor.
 inputs:
   swagger-editor-url:
